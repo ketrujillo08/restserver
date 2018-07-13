@@ -10,6 +10,19 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 //Base de Datos
 //===================
 
+//===================
+//Expires TOKEN
+//===================
+
+process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30;
+
+
+//===================
+//SEED
+//===================
+
+process.env.SEED = process.env.SEED || 'BATMAN';
+
 let urlDB;
 
 if (process.env.NODE_ENV === 'dev') {

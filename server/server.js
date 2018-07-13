@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 require('./config/config');
 const mongoose = require('mongoose');
 //Routes
-const usuarioRoutes = require('./routes/usuario');
+const ROUTES = require('./routes/index');
 const app = express();
 
 mongoose.connect(process.env.URLDB, (err, res) => {
@@ -14,7 +14,7 @@ mongoose.connect(process.env.URLDB, (err, res) => {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use('/usuario', usuarioRoutes);
+app.use(ROUTES);
 
 app.listen(process.env.PORT, () => {
     console.log("Escuchando en puerto: " + process.env.PORT);
